@@ -18,26 +18,20 @@ public class BibliotecaGUI extends JFrame {
     private JTextArea resultadoTextArea;
 
     public BibliotecaGUI() {
-        // Inicializar la biblioteca y la interfaz
         biblioteca = new Biblioteca();
 
-        // Precargar algunos datos de prueba
         precargarDatos();
 
-        // Configuración de la ventana principal
         setTitle("Biblioteca App");
         setSize(850, 450);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-        // Crear y agregar componentes
         initComponents();
 
-        // Mostrar la ventana
         setVisible(true);
     }
 
     private void precargarDatos() {
-        // Datos de prueba
         Libro libro1 = new Libro("Java Programming", "John Doe", "Programación");
         Libro libro2 = new Libro("Clean Code", "Robert Martin", "Programación");
         Libro libro3 = new Libro("The Hobbit", "J.R.R. Tolkien", "Fantasía");
@@ -45,16 +39,13 @@ public class BibliotecaGUI extends JFrame {
         Usuario usuario1 = new Usuario("Lucas");
         Usuario usuario2 = new Usuario("Ivan");
 
-        // Agregar libros a la biblioteca
         biblioteca.agregarLibro(libro1);
         biblioteca.agregarLibro(libro2);
         biblioteca.agregarLibro(libro3);
 
-        // Registrar usuarios en la biblioteca
         biblioteca.registrarUsuario(usuario1);
         biblioteca.registrarUsuario(usuario2);
 
-        // Alquilar y devolver libros
         usuario1.alquilarLibro(libro1);
         usuario1.alquilarLibro(libro2);
 
@@ -64,13 +55,11 @@ public class BibliotecaGUI extends JFrame {
     }
 
     private void initComponents() {
-        // Layout manager
         setLayout(new GridBagLayout());
         GridBagConstraints gbc = new GridBagConstraints();
         gbc.fill = GridBagConstraints.HORIZONTAL;
         gbc.insets = new Insets(5, 5, 5, 5);
 
-        // Componentes
         JLabel busquedaLabel = new JLabel("Buscar por título, autor o género:");
         busquedaTextField = new JTextField(30);
         JButton buscarButton = new JButton("Buscar");
@@ -86,7 +75,6 @@ public class BibliotecaGUI extends JFrame {
         JButton eliminarLibroButton = new JButton("Eliminar Libro");
         JButton eliminarPrestamoButton = new JButton("Eliminar Préstamo");
 
-        // Agregar componentes al contenedor
         gbc.gridx = 0;
         gbc.gridy = 0;
         add(busquedaLabel, gbc);
@@ -132,7 +120,6 @@ public class BibliotecaGUI extends JFrame {
         gbc.gridx = 2;
         add(generarInformeButton, gbc);
 
-        // Configurar acciones para los botones
         buscarButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -205,12 +192,11 @@ public class BibliotecaGUI extends JFrame {
     }
 
     private void realizarBusqueda() {
-        String criterio = "titulo"; // Puedes agregar lógica para seleccionar el criterio
+        String criterio = "titulo";
         String valor = busquedaTextField.getText().trim();
 
         List<Libro> resultados = biblioteca.buscarLibros(criterio, valor);
 
-        // Mostrar resultados en el área de texto
         resultadoTextArea.setText("");
         for (Libro libro : resultados) {
             resultadoTextArea.append(libro.getTitulo() + " - " + libro.getAutor() + " - " + libro.getGenero() + "\n");

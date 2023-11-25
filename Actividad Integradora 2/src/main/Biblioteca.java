@@ -12,8 +12,6 @@ public class Biblioteca {
         usuarios = new ArrayList<>();
     }
 
-    // Métodos para gestionar libros
-
     public void agregarLibro(Libro libro) {
         libros.add(libro);
     }
@@ -26,8 +24,6 @@ public class Biblioteca {
         return new ArrayList<>(libros);
     }
 
-    // Métodos para gestionar usuarios
-
     public void registrarUsuario(Usuario usuario) {
         usuarios.add(usuario);
     }
@@ -36,10 +32,7 @@ public class Biblioteca {
         return new ArrayList<>(usuarios);
     }
 
-    // Otros métodos
-
     public List<Libro> buscarLibros(String criterio, String valor) {
-        // Lógica de búsqueda (puedes implementar según tus necesidades)
         List<Libro> resultados = new ArrayList<>();
         for (Libro libro : libros) {
             if ("titulo".equalsIgnoreCase(criterio) && libro.getTitulo().toLowerCase().contains(valor.toLowerCase())) {
