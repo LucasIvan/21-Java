@@ -1,0 +1,49 @@
+Actividad Integradora 2 - Biblioteca
+
+-------------------------------------------------------------
+
+Este proyecto se desarrolló con programación orientada a objetos y una interfaz gráfica de usuario Swing. La aplicación incluye la administración de libros y usuarios, préstamos, devoluciones, consultas y generación de informes.
+
+-------------------------------------------------------------
+
+La lógica se dividió en clases como Biblioteca, Libro, Usuario, y la interfaz gráfica BibliotecaGUI.
+
+-------------------------------------------------------------
+
+LIBROS Y USUARIOS:
+
+La aplicación permite agregar, eliminar libros y registrar nuevos usuarios. El método agregarLibro() utiliza un cuadro de diálogo para solicitar al usuario información sobre el nuevo libro evitando nulos o cadenas vacías. De manera similar el método registrarUsuario() solicita el nombre del usuario y crea una instancia de la clase Usuario.
+
+-------------------------------------------------------------
+
+PRESTAMOS Y DEVOLUCIONES:
+
+Los métodos prestarLibro() y devolverLibro() interactúan con el usuario a través de cuadros de diálogo. Estos métodos manejan situaciones en las que el usuario cancela la operación o ingresa datos nulos o vacíos.
+
+-------------------------------------------------------------
+
+ELIMINACIONES:
+
+La eliminación de libros y préstamos se realiza mediante los métodos eliminarLibro() y eliminarPrestamo(). Ambos métodos solicitan información al usuario a través de cuadros de diálogo y manejan posibles cancelaciones o datos incorrectos.
+
+-------------------------------------------------------------
+
+EXCEPCIONES:
+
+se ha implementado bloques try-catch para validar entradas del usuario. Esto facilita el manejo de excepciones, mostrando mensajes de error específicos en caso de problemas.
+
+-------------------------------------------------------------
+
+INTERFAZ DE USUARIO (Swing):
+
+La interfaz proporciona botones para realizar acciones como agregar libros, registrar usuarios, realizar búsquedas, generar informes y realizar operaciones de préstamo y devolución.
+
+-------------------------------------------------------------
+
+Dificultades y Soluciones:
+
+Una de las dificultades encontradas fue manejar la interacción con el usuario a través de cuadros de diálogo y garantizar la integridad de los datos ingresados. Se abordó esta dificultad utilizando un método común (obtenerEntrada()) y aplicando bloques try-catch para manejar excepciones de manera efectiva.
+
+-------------------------------------------------------------
+
+Lucas Ivan Molina
